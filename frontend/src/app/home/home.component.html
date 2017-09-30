@@ -1,10 +1,5 @@
 <div style="text-align:center">
   <ol>
-    <li *ngFor="let category of categories">
-      <a [routerLink]="['/category', category.path]">{{category.name}}</a>
-    </li>
-  </ol>
-  <ol>
     <li *ngFor="let post of posts">{{post.title}}</li>
   </ol>
 </div>

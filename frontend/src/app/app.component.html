@@ -1,5 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1>
-  Welcome to {{title}}!
-</h1>
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <ol>
+    <li *ngFor="let category of categories">
+      <a [routerLink]="['/category', category.path]">{{category.name}}</a>
+    </li>
+  </ol>
+</div>
 <router-outlet></router-outlet>
