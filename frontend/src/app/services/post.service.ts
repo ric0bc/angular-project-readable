@@ -8,6 +8,12 @@ export class PostService {
 
   private url = 'http://localhost:3001';
 
+  private authOptions = new RequestOptions({
+    headers: new Headers({
+      'Authorization': 'something'
+    })
+  });
+
   getPosts() {
     const options = new RequestOptions({
       headers: new Headers({
@@ -17,7 +23,10 @@ export class PostService {
       })
     });
 
-    return this.http.get(`${this.url}/posts`, options);
+    return this.http.get(`${this.url}/posts`, this.authOptions);
   }
 
+  getPostDetails(id) {
+    return this.http.get(`${this.url}/posts/${id}`, this.authOptions );
+  }
 }

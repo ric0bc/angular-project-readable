@@ -14,12 +14,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.PostService.getPosts()
       .subscribe( res => this.posts = res.json());
   }
 
-  
+
   posts: any[];
 
 }

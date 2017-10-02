@@ -8,19 +8,22 @@ import { CategoryPostsComponent } from './category-posts/category-posts.componen
 import { CategoriesService } from './services/categories.service'
 import { PostService } from './services/post.service';
 import { HomeComponent } from './home/home.component';
+import { DetailPostComponent } from './detail-post/detail-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryPostsComponent,
-    HomeComponent
+    HomeComponent,
+    DetailPostComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'category/:category', component: CategoryPostsComponent }
+      { path: 'category/:category', component: CategoryPostsComponent },
+      { path: 'post/:postId', component: DetailPostComponent }
     ])
   ],
   providers: [

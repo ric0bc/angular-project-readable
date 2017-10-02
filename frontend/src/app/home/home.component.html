@@ -1,5 +1,9 @@
 <div style="text-align:center">
   <ol>
-    <li *ngFor="let post of posts">{{post.title}}</li>
+    <li
+      [routerLink]="['/post', post.id]"
+      *ngFor="let post of posts">
+      {{post.title}}
+    </li>
   </ol>
 </div>
